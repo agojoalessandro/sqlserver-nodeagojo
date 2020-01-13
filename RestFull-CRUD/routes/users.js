@@ -24,7 +24,7 @@ router.get('/', function(req, res, next) {
         res.send(result);  //Invio il risultato
     });
   });
-});
+});//
 router.get('/search/:name', function(req, res, next) {
   sql.connect(config, err => {
     // ... error check
