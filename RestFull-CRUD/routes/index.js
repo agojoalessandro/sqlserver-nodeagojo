@@ -45,7 +45,12 @@ renderizza = function(pagina,res, dati)
 }
 router.get('/', function (req, res, next) {
   let sqlQuery = "select * from dbo.[cr-unit-attributes]";
-  executeQuery(res, sqlQuery, next);
+  executeQuery(res, sqlQuery, next, "unita");
 }); 
+router.get('/unit/:nome', function (req, res, next){
+  
+    let unita = `select * from dbo.[cr-unit-attributes] WHERE Unit = '${req.params.nome}'`;
+    executeQuery(res, unita, next , "unit");
+});
 
 module.exports = router;
