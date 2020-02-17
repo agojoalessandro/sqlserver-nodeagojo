@@ -59,6 +59,5 @@ router.post('/', function (req, res, next) {
                      VALUES ('${unit.Unit}','${unit.Cost}','${unit.Hit_Speed}')`;
   executeQuery(res, sqlInsert, next);
   res.send({success:true, message: "unità inserita con successo", unit: unit})
-});
-
+}); 
 module.exports = router;
